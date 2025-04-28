@@ -1,0 +1,108 @@
+<div class="auth-wrapper">
+  <div class="auth-content">
+    <div class="auth-bg">
+      <span class="r"></span>
+      <span class="r s"></span>
+      <span class="r s"></span>
+      <span class="r"></span>
+    </div>
+    <div class="card">
+      <div class="card-body text-center row ">
+        <form [formGroup]="userForm" (ngSubmit)="onRegister()">
+          <div class="mb-4">
+            <i class="feather icon-user-plus auth-icon"></i>
+          </div>
+          <h3 class="mb-4">Sign up</h3>
+
+          <!-- Nom -->
+          <div class="input-group mb-3 ">
+            <input type="text" class="form-control" placeholder="Nom" formControlName="nom" />
+           
+            
+          </div>
+          <div *ngIf="userForm.get('nom')?.invalid && userForm.get('nom')?.touched ">
+            nom est required.
+          </div>
+
+          <!-- Prénom -->
+          <div class="input-group mb-3 mt-3">
+            <input type="text" class="form-control" placeholder="Prénom" formControlName="prenom" />
+            
+          </div>
+          <div *ngIf="userForm.get('prenom')?.invalid && userForm.get('prenom')?.touched ">
+            prenom est required.
+          </div>
+          <!-- Email -->
+          <div class="input-group mb-3 mt-3">
+            <input type="email" class="form-control" placeholder="Email" formControlName="email" />
+           
+          </div>
+          <div  *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched ">
+            Veuillez entrer un email valide.
+          </div>
+
+          <!-- Password -->
+          <div class="input-group mb-3 mt-3">
+            <input type="password" class="form-control" placeholder="Password" formControlName="password" />
+           
+          </div>
+          <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched ">
+            Veuillez entrer un password au minimun 6 caractere .
+          </div>
+
+          <!-- Age -->
+          <div class="input-group mb-3 mt-3">
+            <input type="number" class="form-control" placeholder="Age" formControlName="age" />
+           
+          </div>
+          <div *ngIf="userForm.get('age')?.invalid && userForm.get('age')?.touched ">
+            age est required .
+          </div>
+
+          <!-- Sexe -->
+          <div class="input-group mb-3">
+            <select class="form-control" formControlName="sexe">
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+           
+          </div>
+          <div *ngIf="userForm.get('sexe')?.invalid && userForm.get('sexe')?.touched ">
+            sexe est required .
+          </div>
+
+
+
+          <!-- Role -->
+          <div class="input-group mb-3 mt-3">
+            <select class="form-control" formControlName="role">
+              <option value="">Select Role</option>
+              <option value="client">Client</option>
+              <option value="professional">Professional</option>
+            </select>
+           
+          </div>
+           <div *ngIf="userForm.get('role')?.invalid && userForm.get('role')?.touched ">
+              role est required .
+            </div>
+
+          <!-- Profession -->
+          <div class="input-group mb-3 mt-3">
+            <input type="text"  *ngIf="userForm.get('professional')?.value" class="form-control" placeholder="Profession" formControlName="profession" />
+          </div>
+
+          <button class="btn btn-primary shadow-2 mb-4" type="submit">
+            Sign up
+          </button>
+
+          <p class="mb-0 text-muted">
+            Already have an account?
+            <a [routerLink]="['/auth/signin']">Log in</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
