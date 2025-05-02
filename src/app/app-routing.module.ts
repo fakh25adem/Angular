@@ -4,6 +4,7 @@ import { AdminComponent } from './theme/layout/admin/admin.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path: 'sample-page',
         loadComponent: () => import('./demo/extra/sample-page/sample-page.component')
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./demo/pages/profile/profile.module').then(m => m.ProfileModule)
       }
     ]
   },
@@ -50,13 +55,15 @@ const routes: Routes = [
         loadChildren: () => import('./demo/pages/authentication/authentication.module').then((m) => m.AuthenticationModule)
       }
     ]
-  }
+  },
+  { path: 'profile', loadChildren: () => import('./demo/pages/profile/profile.module').then(m => m.ProfileModule) }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),  
       MatSnackBarModule
-    , HttpClientModule  // Ajouter HttpClientModule dans les imports
+    , HttpClientModule, 
+    ReactiveFormsModule  
   ],
   exports: [RouterModule]
 })

@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ali_m\\OneDrive\\Desktop\\Angular\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ali_m\\OneDrive\\Desktop\\Angular\\src\\app\\demo\\dashboard\\dashboard.component.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\demo\\dashboard\\dashboard.component.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ali_m\\OneDrive\\Desktop\\Angular\\src\\app\\demo\\dashboard\\dashboard.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\demo\\dashboard\\dashboard.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dashboard.component.scss",
+              "DocumentMoniker": "C:\\Users\\ali_m\\OneDrive\\Desktop\\Angular\\src\\app\\demo\\dashboard\\dashboard.component.scss",
+              "RelativeDocumentMoniker": "src\\app\\demo\\dashboard\\dashboard.component.scss",
+              "ToolTip": "C:\\Users\\ali_m\\OneDrive\\Desktop\\Angular\\src\\app\\demo\\dashboard\\dashboard.component.scss",
+              "RelativeToolTip": "src\\app\\demo\\dashboard\\dashboard.component.scss",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2025-04-28T21:37:52.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dashboard.component.html",
+              "DocumentMoniker": "C:\\Users\\ali_m\\OneDrive\\Desktop\\Angular\\src\\app\\demo\\dashboard\\dashboard.component.html",
+              "RelativeDocumentMoniker": "src\\app\\demo\\dashboard\\dashboard.component.html",
+              "ToolTip": "C:\\Users\\ali_m\\OneDrive\\Desktop\\Angular\\src\\app\\demo\\dashboard\\dashboard.component.html",
+              "RelativeToolTip": "src\\app\\demo\\dashboard\\dashboard.component.html",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-28T21:37:31.875Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
