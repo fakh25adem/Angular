@@ -24,4 +24,7 @@ export class AppointmentService {
   getAppointmentsCalendarForProf(profId: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/calendar/${profId}`);
   }
+  getClient(idprof : string) : Observable<any>{
+    return this.http.get(`${this.baseUrl}/getClient/${idprof}`)
+  }
 }

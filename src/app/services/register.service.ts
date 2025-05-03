@@ -15,13 +15,9 @@ export class RegisterService {
   // getAllFilm() : Observable<any> : 
   // Observable est un objet qui permet de faire des requêtes HTTP (GET, POST, PUT, DELETE), 
   // asyncronne et non bloquant, on peut souscrire à l'observable et recevoir les données, (c'est comme un flux de données qui envoie des valeurs au fil du temps)
-  getAllFilm() : Observable<any>{
-    return this.http.get("http://localhost:8080/api/v0/movies")
-  }
+ 
 
-  delete(id : number) : Observable<any>{
-    return this.http.delete(`http://localhost:8080/api/v0/movies/${id}`)
-  }
+ 
 
   register(data : any) : Observable<any>{
     return this.http.post("http://localhost:4600/api/auth/register" , data)

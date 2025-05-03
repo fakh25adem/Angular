@@ -10,7 +10,7 @@ import frLocale from '@fullcalendar/core/locales/fr';
   templateUrl: './tbl-bootstrap.component.html',
   styleUrls: ['./tbl-bootstrap.component.scss']
 })
-export default class TblBootstrapComponent implements OnInit {
+export default class TblBootstrapComponent  {
   calendarOptions: CalendarOptions = {
   plugins: [timeGridPlugin, interactionPlugin],
   initialView: 'timeGridWeek',

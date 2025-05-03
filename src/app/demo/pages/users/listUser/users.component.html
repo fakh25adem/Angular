@@ -1,22 +1,37 @@
-<!-- <h2>Mon profil</h2>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" *ngIf="profileForm">
-  <label>Nom :</label>
-  <input formControlName="nom" />
+<table *ngIf="clients.length > 0 " border="1" cellpadding="8" style="width: 100%; border-collapse: collapse">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Sexe</th>
+      <th>Date</th>
+      <th>Debut</th>
+      <th>Fin</th>
+      <th>Status</th>
+      <!-- Add more columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{ client.client.nom }}</td>
 
-  <label>Prénom :</label>
-  <input formControlName="prenom" />
+      <td>{{ client.client.prenom }}</td>
+      <td>{{ client.client.email }}</td>
+      <td>{{ client.client.age }}</td>
+      <td>{{ client.client.sexe }}</td>
+      <td>{{ client.dateOnly }}</td>
+      <td>{{ client.heureDebut }}</td>
+      <td>{{ client.heureFin }}</td>
+      <td>{{ client.status }}</td>
 
-  <label>Email :</label>
-  <input formControlName="email" />
+    </tr>
+  </tbody>
+</table>
+<!-- Pagination controls -->
 
-  <label>Âge :</label>
-  <input type="number" formControlName="age" />
 
-  <label>Sexe :</label>
-  <select formControlName="sexe">
-    <option value="Homme">Homme</option>
-    <option value="Femme">Femme</option>
-  </select>
-
-  <button type="submit">Mettre à jour</button>
-</form> -->
+<div *ngIf="clients.length == 0">
+  No clients found.
+</div>
