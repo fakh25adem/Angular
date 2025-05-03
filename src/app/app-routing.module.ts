@@ -21,8 +21,8 @@ const routes: Routes = [
         loadComponent: () => import('./demo/dashboard/dashboard.component').then((c) => c.DashboardComponent)
       },
       {
-        path: 'basic',
-        loadChildren: () => import('./demo/ui-elements/ui-basic/ui-basic.module').then((m) => m.UiBasicModule)
+        path: 'client',
+        loadChildren: () => import('./demo/client/ui-basic.module').then((m) => m.UiBasicModule)
       },
      
       {

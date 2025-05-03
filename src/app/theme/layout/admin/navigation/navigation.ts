@@ -41,7 +41,7 @@ export const NavigationItems: NavigationItem[] = [
         id: 'button',
         title: 'Reservation',
         type: 'item',
-        url: '/basic/reservation',
+        url: '/client/reservation',
         icon: 'feather icon-server'
 
       },
@@ -50,7 +50,7 @@ export const NavigationItems: NavigationItem[] = [
         id: 'collapse',
         title: 'Calendrier',
         type: 'item',
-        url: '/basic/calender',
+        url: '/client/calender',
         icon: 'feather icon-file-text'
 
       },
