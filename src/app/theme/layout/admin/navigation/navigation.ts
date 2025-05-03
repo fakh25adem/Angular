@@ -16,22 +16,22 @@ export interface NavigationItem {
   children?: NavigationItem[];
 }
 export const NavigationItems: NavigationItem[] = [
-  {
-    id: 'navigation',
-    title: 'Navigation',
-    type: 'group',
-    icon: 'icon-navigation',
-    children: [
-      {
-        id: 'dashboard',
-        title: 'Dashboard',
-        type: 'item',
-        url: '/dashboard',
-        icon: 'feather icon-home',
-        classes: 'nav-item'
-      }
-    ]
-  },
+  // {
+  //   id: 'navigation',
+  //   title: 'Navigation',
+  //   type: 'group',
+  //   icon: 'icon-navigation',
+  //   children: [
+  //     {
+  //       id: 'dashboard',
+  //       title: 'Dashboard',
+  //       type: 'item',
+  //       url: '/dashboard',
+  //       icon: 'feather icon-home',
+  //       classes: 'nav-item'
+  //     }
+  //   ]
+  // },
   {
     id: 'reservationC',
     title: 'Gestion des réservations client',
@@ -88,39 +88,39 @@ export const NavigationItems: NavigationItem[] = [
         icon: 'feather icon-file-text'
       }
     ]
-  },
- 
-  {
-    id: 'pages',
-    title: 'Pages',
-    type: 'group',
-    icon: 'icon-pages',
-    children: [
-      {
-        id: 'auth',
-        title: 'Authentication',
-        type: 'collapse',
-        icon: 'feather icon-lock',
-        children: [
-          {
-            id: 'signup',
-            title: 'Sign up',
-            type: 'item',
-            url: '/auth/signup',
-            target: true,
-            breadcrumbs: false
-          },
-          {
-            id: 'signin',
-            title: 'Sign in',
-            type: 'item',
-            url: '/auth/signin',
-            target: true,
-            breadcrumbs: false
-          }
-        ]
-      },
-      
-    ]
   }
+ 
+  // {
+  //   id: 'pages',
+  //   title: 'Pages',
+  //   type: 'group',
+  //   icon: 'icon-pages',
+  //   children: [
+  //     {
+  //       id: 'auth',
+  //       title: 'Authentication',
+  //       type: 'collapse',
+  //       icon: 'feather icon-lock',
+  //       children: [
+  //         {
+  //           id: 'signup',
+  //           title: 'Sign up',
+  //           type: 'item',
+  //           url: '/auth/signup',
+  //           target: true,
+  //           breadcrumbs: false
+  //         },
+  //         {
+  //           id: 'signin',
+  //           title: 'Sign in',
+  //           type: 'item',
+  //           url: '/auth/signin',
+  //           target: true,
+  //           breadcrumbs: false
+  //         }
+  //       ]
+  //     },
+      
+  //   ]
+  // }
 ];

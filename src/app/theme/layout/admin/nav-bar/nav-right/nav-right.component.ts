@@ -1,5 +1,6 @@
 // angular import
 import { Component, inject, OnInit  } from '@angular/core';
+import { Router } from '@angular/router';
 
 // bootstrap import
 import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -20,7 +21,10 @@ export class NavRightComponent implements OnInit {
   Nom: string;
   Prenom: string;
   // constructor
-  constructor(private registerService: RegisterService) {
+  constructor(private registerService: RegisterService,
+    private router: Router
+
+  ) {
     const config = inject(NgbDropdownConfig);
     config.placement = 'bottom-right';
   }
@@ -40,5 +44,9 @@ export class NavRightComponent implements OnInit {
       console.error('No token found');
     
     }
+  }
+  logout(): void {
+    this.registerService.logout();
+    this.router.navigate(['/auth/signin']);
   }
 }

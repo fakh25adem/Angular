@@ -1,24 +1,39 @@
-<h2>Mon profil</h2>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" *ngIf="profileForm">
-  <label>Nom :</label>
-  <input formControlName="nom" />
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="w-100" style="max-width: 500px;">
+    <h2 class=" mb-4">Mon profil</h2>
 
-  <label>Prénom :</label>
-  <input formControlName="prenom" />
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" *ngIf="profileForm" class="p-4 shadow rounded bg-white">
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input id="nom" type="text" formControlName="nom" class="form-control" placeholder="Entrez votre nom" />
+      </div>
 
-  <label>Email :</label>
-  <input formControlName="email" />
+      <div class="mb-3">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input id="prenom" type="text" formControlName="prenom" class="form-control" placeholder="Entrez votre prénom" />
+      </div>
 
-  <label>Âge :</label>
-  <input type="number" formControlName="age" />
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email" formControlName="email" class="form-control" placeholder="Entrez votre email" />
+      </div>
 
-  <label>Sexe :</label>
-  <select formControlName="sexe">
-    <option value="Homme">Homme</option>
-    <option value="Femme">Femme</option>
-    <option value="Femme">other</option>
+      <div class="mb-3">
+        <label for="age" class="form-label">Âge</label>
+        <input id="age" type="number" formControlName="age" class="form-control" placeholder="Entrez votre âge" />
+      </div>
 
-  </select>
+      <div class="mb-3">
+        <label for="sexe" class="form-label">Sexe</label>
+        <select id="sexe" formControlName="sexe" class="form-select">
+          <option value="" disabled selected>Choisir le sexe</option>
+          <option value="Homme">Homme</option>
+          <option value="Femme">Femme</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
 
-  <button type="submit">Mettre à jour</button>
-</form>
+      <button type="submit" class="btn btn-primary w-100">Mettre à jour</button>
+    </form>
+  </div>
+</div>

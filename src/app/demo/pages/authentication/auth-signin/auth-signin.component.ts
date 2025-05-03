@@ -40,7 +40,7 @@ export class AuthSigninComponent {
 
         this.snackBar.open('✅ Connexion réussie !', 'Fermer', { duration: 3000 });
 
-        this.router.navigate(['/dashboard']); // Change selon ton app
+        this.router.navigate(['/profile']); // Change selon ton app
       },
       (err) => {
         this.snackBar.open('❌ Identifiants incorrects.', 'Fermer', { duration: 3000 });
