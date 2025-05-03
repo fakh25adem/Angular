@@ -17,13 +17,28 @@ import { RegisterService } from '../../../../../services/register.service';
 })
 export class NavRightComponent implements OnInit {
   user: any = null; // ← l'utilisateur connecté
-
+  Nom: string;
+  Prenom: string;
   // constructor
   constructor(private registerService: RegisterService) {
     const config = inject(NgbDropdownConfig);
     config.placement = 'bottom-right';
   }
   ngOnInit(): void {
-    this.user = this.registerService.getUser(); // ← récupération à l'initialisation
+   
+    const token = localStorage.getItem('token');
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      console.log('Payload:', payload);
+  
+      this.registerService.getUserById(payload.id).subscribe(user => {
+          this.Nom = user?.nom || '',
+          this.Prenom = user?.prenom || ''
+          
+      });
+    } else {
+      console.error('No token found');
+    
+    }
   }
 }

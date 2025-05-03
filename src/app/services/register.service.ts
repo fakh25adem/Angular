@@ -39,6 +39,8 @@ setUser(user: any, token: string) {
   this.currentUser = user;
   localStorage.setItem('user', JSON.stringify(user));
   localStorage.setItem('token', token);
+  const payload = JSON.parse(atob(token.split('.')[1]));
+  localStorage.setItem('userId', payload.id); // pour usage futur si besoin
 }
 
 getUser() {
@@ -61,13 +63,13 @@ logout() {
   this.currentUser = null;
 }
 
-getUserById(id: string): Observable<any> {
+getUserById(userId: string): Observable<any> {
   const headers = {
     headers: {
       Authorization: `Bearer ${this.getToken()}`
     }
   };
-  return this.http.get(`http://localhost:4600/api/user/One/${id}`, headers);
+  return this.http.get(`http://localhost:4600/api/users/One/${userId}`, headers);
 }
 
 updateUser(id: string, data: any): Observable<any> {
@@ -76,7 +78,7 @@ updateUser(id: string, data: any): Observable<any> {
       Authorization: `Bearer ${this.getToken()}`
     }
   };
-  return this.http.put(`http://localhost:4600/api/user/${id}`, data, headers);
+  return this.http.put(`http://localhost:4600/api/users/${id}`, data, headers);
 }
 getUserId(): string | null {
   return localStorage.getItem('userId');

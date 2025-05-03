@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { NavLeftComponent } from './nav-left/nav-left.component';
 import { NavRightComponent } from './nav-right/nav-right.component';
+import { RegisterService } from '../../../../services/register.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,7 +17,9 @@ import { NavRightComponent } from './nav-right/nav-right.component';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-  // public props
+  Nom: string;
+  Prenom: string;
+    // public props
   readonly NavCollapsedMob = output();
   navCollapsedMob;
   headerStyle: string;
@@ -23,7 +27,10 @@ export class NavBarComponent {
   collapseStyle: string;
 
   // constructor
-  constructor() {
+  constructor(private RegisterService: RegisterService,
+    
+  ) {
+
     this.navCollapsedMob = false;
     this.headerStyle = '';
     this.menuClass = false;
@@ -47,6 +54,26 @@ export class NavBarComponent {
   closeMenu() {
     if (document.querySelector('app-navigation.pcoded-navbar').classList.contains('mob-open')) {
       document.querySelector('app-navigation.pcoded-navbar').classList.remove('mob-open');
+    }
+  }
+  user: any = null;
+
+
+  ngOnInit(): void {
+   
+    const token = localStorage.getItem('token');
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      console.log('Payload:', payload);
+  
+      this.RegisterService.getUserById(payload.id).subscribe(user => {
+          this.Nom = user?.nom || '',
+          this.Prenom = user?.prenom || ''
+          
+      });
+    } else {
+      console.error('No token found');
+    
     }
   }
 }
