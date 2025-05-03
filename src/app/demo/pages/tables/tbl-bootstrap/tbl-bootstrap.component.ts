@@ -29,9 +29,13 @@ export default class TblBootstrapComponent  {
 constructor(private appointmentService: AppointmentService) {}
 
 ngOnInit(): void {
-  const profId = '67ea5e7e813ce64f6d0281c9'; // à remplacer dynamiquement
+  const token = localStorage.getItem('token');
+  const payload = JSON.parse(atob(token.split('.')[1]));
+  if(token){
+  const profId = payload.id; // à remplacer dynamiquement
 
   this.appointmentService.getAppointmentsCalendarForProf(profId).subscribe(events => {
     this.calendarOptions.events = events;
   });
+}
 }}

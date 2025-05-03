@@ -41,13 +41,13 @@
 <h3>Ajouter un rendez-vous</h3>
 <form [formGroup]="reservationForm" (ngSubmit)="ajouterRendezVous()">
   <label>Nom du patient :</label>
-  <input formControlName="patientId" type="text" />
+  <input formControlName="patientId" type="text" [disabled]="true" />
 
   <label>Heure de début :</label>
   <input formControlName="startHour" type="time" />
 
   <label>Heure de fin :</label>
-  <input formControlName="endHour" type="time" />
+  <input  formControlName="endHour" type="time" [disabled]="true"  />
 
   <button type="submit">Ajouter</button>
 </form>

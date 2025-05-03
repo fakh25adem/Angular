@@ -11,6 +11,7 @@ export interface NavigationItem {
   external?: boolean;
   target?: boolean;
   breadcrumbs?: boolean;
+  roles?: string[]; // Ajoutez cette ligne
 
   children?: NavigationItem[];
 }
@@ -36,13 +37,16 @@ export const NavigationItems: NavigationItem[] = [
     title: 'Gestion des réservations client',
     type: 'group',
     icon: 'icon-group',
+    roles: ['client'], 
+
     children: [
       {
         id: 'button',
         title: 'Reservation',
         type: 'item',
         url: '/client/reservation',
-        icon: 'feather icon-server'
+        icon: 'feather icon-server',
+        roles: ['client']
 
       },
     
@@ -52,6 +56,7 @@ export const NavigationItems: NavigationItem[] = [
         type: 'item',
         url: '/client/calender',
         icon: 'feather icon-file-text'
+        ,roles: ['client']
 
       },
     ]
@@ -62,6 +67,7 @@ export const NavigationItems: NavigationItem[] = [
     title: 'Gestion des reservations prof',
     type: 'group',
     icon: 'icon-group',
+    roles: ['professional'],
     children: [
       {
         id: 'forms-element',
@@ -69,6 +75,7 @@ export const NavigationItems: NavigationItem[] = [
         type: 'item',
         url: '/users/list',
         classes: 'nav-item',
+        roles: ['professional'],
         icon: 'feather icon-book',
       },
       {
@@ -77,6 +84,7 @@ export const NavigationItems: NavigationItem[] = [
         type: 'item',
         url: '/tables/bootstrap',
         classes: 'nav-item',
+        roles: ['professional'],
         icon: 'feather icon-file-text'
       }
     ]

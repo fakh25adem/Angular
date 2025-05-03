@@ -14,11 +14,15 @@ export class UsersComponent  {
     constructor(private appointmentService: AppointmentService) {}
   
     ngOnInit(): void {
-      const profId = '67ea5e7e813ce64f6d0281c9'; // à remplacer dynamiquement
+      const token = localStorage.getItem('token');
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      if(token){
+      const profId = payload.id; // à remplacer dynamiquement
       this.appointmentService.getClient(profId).subscribe(res => {
         console.log("ressssssssss",res);
         this.clients= res;
-      }); // Example: Load clients for professional ID 1
+      }); 
     }
+  }
    
 }

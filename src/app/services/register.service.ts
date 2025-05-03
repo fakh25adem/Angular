@@ -35,13 +35,7 @@ export class RegisterService {
   // Gestion du token et de l'utilisateur connecté
 private currentUser: any = null;
 
-setUser(user: any, token: string) {
-  this.currentUser = user;
-  localStorage.setItem('user', JSON.stringify(user));
-  localStorage.setItem('token', token);
-  const payload = JSON.parse(atob(token.split('.')[1]));
-  localStorage.setItem('userId', payload.id); // pour usage futur si besoin
-}
+
 
 getUser() {
   if (!this.currentUser) {

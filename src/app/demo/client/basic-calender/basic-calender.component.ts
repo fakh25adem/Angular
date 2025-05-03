@@ -30,10 +30,14 @@ export class BasicCalenderComponent implements OnInit {
   constructor(private appointmentService: AppointmentService) {}
 
   ngOnInit(): void {
-    const clientId = '67e93805df508131ff117ae3'; // à remplacer dynamiquement
+    const token = localStorage.getItem('token');
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    if(token){
+    const clientId = payload.id; // à remplacer dynamiquement
 
     this.appointmentService.getAppointmentsCalendarForClient(clientId).subscribe(events => {
       this.calendarOptions.events = events;
     });
   }
+}
 }

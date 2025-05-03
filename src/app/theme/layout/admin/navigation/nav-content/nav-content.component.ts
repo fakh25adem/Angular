@@ -1,5 +1,4 @@
-// angular import
-import { Component, inject, output } from '@angular/core';
+import { Component, inject, output, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 // project import
@@ -14,23 +13,41 @@ import { NavGroupComponent } from './nav-group/nav-group.component';
   templateUrl: './nav-content.component.html',
   styleUrls: ['./nav-content.component.scss']
 })
-export class NavContentComponent {
+export class NavContentComponent implements OnInit {
   private location = inject(Location);
 
-  // public method
   // version
   title = 'Demo application for version numbering';
   currentApplicationVersion = environment.appVersion;
 
-  navigations!: NavigationItem[];
+  navigations: NavigationItem[] = [];
   wrapperWidth: number;
   windowWidth = window.innerWidth;
 
   NavCollapsedMob = output();
 
-  // constructor
-  constructor() {
-    this.navigations = NavigationItems;
+  ngOnInit() {
+    this.filterNavigationByRole();
+  }
+
+  private filterNavigationByRole() {
+    const currentUserRole = localStorage.getItem('role'); // Implémentez cette méthode dans AuthService
+    this.navigations = this.filterItemsByRole(NavigationItems, currentUserRole);
+  }
+
+  private filterItemsByRole(items: NavigationItem[], role: string): NavigationItem[] {
+    return items
+      .filter(item => !item.roles || item.roles.includes(role))
+      .map(item => {
+        if (item.children) {
+          return {
+            ...item,
+            children: this.filterItemsByRole(item.children, role)
+          };
+        }
+        return item;
+      })
+      .filter(item => !item.children || item.children.length > 0);
   }
 
   fireOutClick() {
