@@ -23,27 +23,53 @@ export class ProfileComponent {
   ) {}
 
   ngOnInit(): void {
-    const userId = this.RegisterService.getUserId();
-
-    if (!userId) {
-      this.router.navigate(['/auth/signin']);
-      return;
-    }
-    this.userId = userId;
-
-    const headers = new HttpHeaders({
-      Authorization: 'Bearer ' + this.RegisterService.getToken()
-    });
-
-    this.http.get<any>(`${this.apiUrl}/One/${this.userId}`, { headers }).subscribe(user => {
-      this.profileForm = this.fb.group({
-        nom: [user.nom],
-        prenom: [user.prenom],
-        email: [user.email],
-        age: [user.age],
-        sexe: [user.sexe]
+    this.userId = this.RegisterService.getUserId() || '';
+        console.log('User ID:', this.userId);
+    const token = localStorage.getItem('token');
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    console.log(payload);   
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      console.log('Payload:', payload);
+  
+      this.userId = payload.id; // <== Fix ici
+      console.log('User ID:', this.userId);
+  
+      this.RegisterService.getUserById(this.userId).subscribe(user => {
+        this.profileForm = this.fb.group({
+          nom: [user?.nom || ''],
+          prenom: [user?.prenom || ''],
+          email: [user?.email || ''],
+          age: [user?.age || null],
+          sexe: [user?.sexe || '']
+        });
       });
-    });
+    } else {
+      console.error('No token found');
+      this.router.navigate(['/auth/signin']);
+    }
+  
+  
+
+    // if (!userId) {
+    //   this.router.navigate(['/auth/signin']);
+    //   return;
+    // }
+    // this.userId = userId;
+
+    // const headers = new HttpHeaders({
+    //   Authorization: 'Bearer ' + this.RegisterService.getToken()
+    // });
+
+    // this.http.get<any>(`${this.apiUrl}/One/${this.userId}`, { headers }).subscribe(user => {
+    //   this.profileForm = this.fb.group({
+    //     nom: [user.nom],
+    //     prenom: [user.prenom],
+    //     email: [user.email],
+    //     age: [user.age],
+    //     sexe: [user.sexe]
+    //   });
+    // });
   }
 
   onSubmit() {
