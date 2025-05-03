@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AppointmentService {
@@ -16,5 +17,11 @@ export class AppointmentService {
   }
   ajouterRendezVous(data: any) {
     return this.http.post<any>(`${this.baseUrl}/reservations`, data);
+  }
+  getAppointmentsCalendarForClient(clientId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/calendarClient/${clientId}`);
+  }
+  getAppointmentsCalendarForProf(profId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/calendar/${profId}`);
   }
 }

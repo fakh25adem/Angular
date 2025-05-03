@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { TablesRoutingModule } from './tables-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import TblBootstrapComponent from './tbl-bootstrap/tbl-bootstrap.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, TablesRoutingModule,FormsModule, ReactiveFormsModule,]
+  declarations: [TblBootstrapComponent],
+  imports: [CommonModule, TablesRoutingModule,FormsModule, ReactiveFormsModule, FullCalendarModule,]
 })
 export class TablesModule {}

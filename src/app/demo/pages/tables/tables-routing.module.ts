@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import TblBootstrapComponent from './tbl-bootstrap/tbl-bootstrap.component';
 
 const routes: Routes = [
   {
-    path: '',
-    children: [
-      {
-        path: 'bootstrap',
-        loadComponent: () => import('./tbl-bootstrap/tbl-bootstrap.component')
-      }
-    ]
-  }
+    path: 'bootstrap',
+    component: TblBootstrapComponent
+  },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TablesRoutingModule {}
+export class TablesRoutingModule { }

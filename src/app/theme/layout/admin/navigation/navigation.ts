@@ -32,97 +32,56 @@ export const NavigationItems: NavigationItem[] = [
     ]
   },
   {
-    id: 'ui-element',
-    title: 'UI ELEMENT',
+    id: 'reservationC',
+    title: 'Gestion des réservations client',
     type: 'group',
-    icon: 'icon-ui',
+    icon: 'icon-group',
     children: [
       {
-        id: 'basic',
-        title: 'Component',
-        type: 'collapse',
-        icon: 'feather icon-box',
-        children: [
-          {
-            id: 'button',
-            title: 'Button',
-            type: 'item',
-            url: '/basic/button'
-          },
-          {
-            id: 'badges',
-            title: 'Badges',
-            type: 'item',
-            url: '/basic/badges'
-          },
-          {
-            id: 'breadcrumb-pagination',
-            title: 'Breadcrumb & Pagination',
-            type: 'item',
-            url: '/basic/breadcrumb-paging'
-          },
-          {
-            id: 'collapse',
-            title: 'Collapse',
-            type: 'item',
-            url: '/basic/collapse'
-          },
-          {
-            id: 'tabs-pills',
-            title: 'Tabs & Pills',
-            type: 'item',
-            url: '/basic/tabs-pills'
-          },
-          {
-            id: 'typography',
-            title: 'Typography',
-            type: 'item',
-            url: '/basic/typography'
-          }
-        ]
-      }
+        id: 'button',
+        title: 'Reservation',
+        type: 'item',
+        url: '/basic/reservation',
+        icon: 'feather icon-server'
+
+      },
+    
+      {
+        id: 'collapse',
+        title: 'Calendrier',
+        type: 'item',
+        url: '/basic/calender',
+        icon: 'feather icon-file-text'
+
+      },
     ]
   },
+
   {
     id: 'forms',
-    title: 'Forms & Tables',
+    title: 'Gestion des reservations prof',
     type: 'group',
     icon: 'icon-group',
     children: [
       {
         id: 'forms-element',
-        title: 'Form Elements',
+        title: 'List Users',
         type: 'item',
-        url: '/forms/basic',
+        url: '/users/list',
         classes: 'nav-item',
-        icon: 'feather icon-file-text'
+        icon: 'feather icon-book',
       },
       {
         id: 'tables',
-        title: 'Tables',
+        title: 'Calendrier',
         type: 'item',
         url: '/tables/bootstrap',
         classes: 'nav-item',
-        icon: 'feather icon-server'
+        icon: 'feather icon-file-text'
       }
     ]
   },
-  {
-    id: 'chart-maps',
-    title: 'Chart',
-    type: 'group',
-    icon: 'icon-charts',
-    children: [
-      {
-        id: 'apexChart',
-        title: 'ApexChart',
-        type: 'item',
-        url: 'apexchart',
-        classes: 'nav-item',
-        icon: 'feather icon-pie-chart'
-      }
-    ]
-  },
+ 
   {
     id: 'pages',
     title: 'Pages',
@@ -153,33 +112,7 @@ export const NavigationItems: NavigationItem[] = [
           }
         ]
       },
-      {
-        id: 'sample-page',
-        title: 'Sample Page',
-        type: 'item',
-        url: '/sample-page',
-        classes: 'nav-item',
-        icon: 'feather icon-sidebar'
-      },
-      {
-        id: 'disabled-menu',
-        title: 'Disabled Menu',
-        type: 'item',
-        url: 'javascript:',
-        classes: 'nav-item disabled',
-        icon: 'feather icon-power',
-        external: true
-      },
-      {
-        id: 'buy_now',
-        title: 'Buy Now',
-        type: 'item',
-        icon: 'feather icon-book',
-        classes: 'nav-item',
-        url: 'https://codedthemes.com/item/datta-able-angular/',
-        target: true,
-        external: true
-      }
+      
     ]
   }
 ];

@@ -24,22 +24,16 @@ const routes: Routes = [
         path: 'basic',
         loadChildren: () => import('./demo/ui-elements/ui-basic/ui-basic.module').then((m) => m.UiBasicModule)
       },
-      {
-        path: 'forms',
-        loadChildren: () => import('./demo/pages/form-elements/form-elements.module').then((m) => m.FormElementsModule)
-      },
+     
       {
         path: 'tables',
         loadChildren: () => import('./demo/pages/tables/tables.module').then((m) => m.TablesModule)
       },
       {
-        path: 'apexchart',
-        loadComponent: () => import('./demo/pages/core-chart/apex-chart/apex-chart.component')
+        path: 'users',
+        loadChildren: () => import('./demo/pages/users/users.module').then((m) => m.UsersModule)
       },
-      {
-        path: 'sample-page',
-        loadComponent: () => import('./demo/extra/sample-page/sample-page.component')
-      },
+  
       {
         path: 'profile',
         loadChildren: () => import('./demo/pages/profile/profile.module').then(m => m.ProfileModule)
@@ -56,7 +50,6 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'profile', loadChildren: () => import('./demo/pages/profile/profile.module').then(m => m.ProfileModule) }
 ];
 
 @NgModule({

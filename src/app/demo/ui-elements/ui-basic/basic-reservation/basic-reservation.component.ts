@@ -3,12 +3,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { AppointmentService } from 'src/app/services/appointment.service';
 
 @Component({
-  selector: 'app-basic-button',
+  selector: 'app-basic-reservation',
   standalone: false,
-  templateUrl: './basic-button.component.html',
-  styleUrls: ['./basic-button.component.scss']
+  templateUrl: './basic-reservation.component.html',
+  styleUrls: ['./basic-reservation.component.scss']
 })
-export class BasicButtonComponent implements OnInit {
+export class BasicReservationComponent implements OnInit {
 
   rechercheForm = new FormGroup({
     professionalId: new FormControl(''),
